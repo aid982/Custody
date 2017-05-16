@@ -1,0 +1,36 @@
+#g-recaptcha {
+    margin: 0 auto;
+    position: relative;
+    padding-top:30px;
+    display: inline-block;
+    transform: scale(0.77);
+    -webkit-transform: scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+
+
+
+}
+.loginMain {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 15px;
+}
+.loginContainer {
+    padding: 25px;
+    background-color: #00bcd4;
+
+}
+.button-line {
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .loginMain {
+        margin: auto;
+        width: 95%;
+        text-align: center;
+        padding: 15px;
+    }
+}
