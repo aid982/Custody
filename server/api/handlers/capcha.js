@@ -9,7 +9,7 @@ module.exports.post = {
     handler: function (request, reply) {
         const token = request.payload.token;
 
-        var  params = { secret: "6LckICAUAAAAAN6XaJFGLPLG62W9lco6sYiAO27z", response: token }
+      
 
         var esc = encodeURIComponent;
         var query = Object.keys(params)
