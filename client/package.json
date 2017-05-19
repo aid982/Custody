@@ -1,5 +1,5 @@
 {
-  "name": "Custdody",
+  "name": "Custody",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -7,7 +7,6 @@
     "redux-logger": "^3.0.1"
   },
   "dependencies": {
-    "jquery": "^3.1.1",
     "material-ui": "^0.17.0",
     "react": "^15.4.2",
     "react-datepicker": "^0.40.0",

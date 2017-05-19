@@ -14,10 +14,10 @@ class RestorePassword extends React.Component {
 
 
     render() {
-        const {errors,onSubmit,onChange,data,onSnackBarClose,snackBarOpen,captchaVerifyCallback,captchaCallback,isFetching} = this.props
+        const {errors,onSubmit,onChange,data,onSnackBarClose,snackBarOpen,captchaVerifyCallback,captchaCallback,isFetching,captchaOK} = this.props
         return (
             <div>
-                <RestorePasswordComp errors={errors}  onSubmit={onSubmit} onChange={onChange} data={data} onSnackBarClose={onSnackBarClose} snackBarOpen={snackBarOpen} captchaVerifyCallback={captchaVerifyCallback} isFetching={isFetching} captchaCallback={captchaCallback}/>
+                <RestorePasswordComp errors={errors}  onSubmit={onSubmit} onChange={onChange} data={data} onSnackBarClose={onSnackBarClose} snackBarOpen={snackBarOpen} captchaVerifyCallback={captchaVerifyCallback} isFetching={isFetching} captchaCallback={captchaCallback} captchaOK={captchaOK}/>
             </div>
 
         );
@@ -30,6 +30,7 @@ const mapStateToProps = (state) => {
         data  : state.restorePassword.data,
         snackBarOpen:state.restorePassword.snackBarOpen,
         isFetching: state.restorePassword.isFetching,
+        captchaOK:state.capcha.ok
     }
 }
 

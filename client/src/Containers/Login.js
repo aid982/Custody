@@ -12,9 +12,9 @@ import {verifyCapcha} from '../Actions/capcha'
 class Login extends React.Component {
     render() {
 
-        const {errors,onChange,user,onSubmit,captchaVerifyCallback,captchaCallback} = this.props
+        const {errors,onChange,user,onSubmit,captchaVerifyCallback,captchaCallback, captchaOK} = this.props
         return (
-            <LoginForm errors={errors} onChange={onChange} user={user} onSubmit={onSubmit} captchaCallback={captchaCallback} captchaVerifyCallback={captchaVerifyCallback}/>
+            <LoginForm errors={errors} onChange={onChange} user={user} onSubmit={onSubmit} captchaCallback={captchaCallback} captchaVerifyCallback={captchaVerifyCallback} captchaOK={captchaOK}/>
         )
 
     }
@@ -26,7 +26,8 @@ class Login extends React.Component {
 const mapStateToProps = (state) => {
     return {
         errors: state.login.errors,
-        user  : state.login.user
+        user  : state.login.user,
+        captchaOK:state.capcha.ok
     }
 }
 

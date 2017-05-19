@@ -324,7 +324,7 @@ module.exports.generatePasswordOverEmail = {
                     subject: 'Your p@ssw0rd changed', // Subject line
                     //text: 'Hello world ?', // plain text body
                     //html:config.mail.restorePasswordText+ '<b>Your p@ssw0rd is :' + password + '</b>' // html body
-                    html: config.mail.restorePasswordText + `Your l@gin is :` + result.name + ` <br>   Your p@ssw0rd is :` + password + `<br>` // html body
+                    html: config.mail.restorePasswordText + `Your l@gin is :` + result.name + ` <br>   Your p@ssw0rd is :` + password + `<br>`+ config.mail.restorePasswordText2 // html body
                 };
                 let account = {
                     login: result.name,

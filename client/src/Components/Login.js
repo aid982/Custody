@@ -10,7 +10,7 @@ import TextField from 'material-ui/TextField';
 import { Link } from 'react-router';
 import Recaptcha from 'react-recaptcha';
 
-const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCallback}) => (
+const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCallback,captchaOK}) => (
     <Paper className="loginMain" zDepth={5}>
         <Card className="loginContainer">
 
@@ -37,12 +37,12 @@ const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCall
                     value={user.password}
                 />
             </div>
-            <Recaptcha className ="capcha"
+            {! captchaOK && <Recaptcha className ="capcha"
                 sitekey="6LckICAUAAAAAFGJClbghPFZ0CmP4ou9S8nI2tkC"
                 render="explicit"
                 verifyCallback={captchaVerifyCallback}
                 onloadCallback={captchaCallback}
-            />
+            />}
 
 
             <div className="button-line">
@@ -62,6 +62,7 @@ const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCall
 
 
 Login.propTypes = {
+    captchaOK:PropTypes.bool.isRequired,
     user: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,

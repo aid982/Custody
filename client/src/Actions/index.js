@@ -65,6 +65,7 @@ const fetchData = (query, token) => dispatch => {
             );
         } else {
             if (response.status === 401) {
+                dispatch(receiveError({errorMSG: ""}));
                 browserHistory.push('/login')
             } else {
                 throw new Error(response.statusText);
@@ -73,6 +74,8 @@ const fetchData = (query, token) => dispatch => {
 
     }).catch((Error) => {
         dispatch(receiveError({errorMSG: Error.message}));
+        browserHistory.push('/login')
+
     });
 
 
