@@ -1,15 +1,11 @@
-const mongojs = require('hapi-mongojs');
-const Boom = require('boom');
-const bcrypt = require('bcryptjs');
 const request1c = require('request');
-const base64 = require('base-64');
 const config = require('../../config');
 
 module.exports.post = {
     handler: function (request, reply) {
         const token = request.payload.token;
 
-        var  params = { secret: "6LckICAUAAAAAN6XaJFGLPLG62W9lco6sYiAO27z", response: token }
+        var  params = { secret: config.security.CAPHA_SECRET, response: token }
 
         var esc = encodeURIComponent;
         var query = Object.keys(params)
