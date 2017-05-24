@@ -306,6 +306,8 @@ module.exports.post = {
 module.exports.generatePasswordOverEmail = {
     handler: function (request, reply) {
         const account = request.payload;
+
+        const mode = request.params.mode ? encodeURIComponent(request.params.mode) : 'custody';
         const accountsCollection = mongojs.db().collection('accounts');
         accountsCollection.findOne({'email': account.email}, (err, result) => {
             if (err) {

@@ -6,7 +6,7 @@ const capcha = require('./handlers/capcha');
 exports.register = (plugin, options, next) => {
 
     plugin.route([
-        {method: 'POST', path: '/accounts/email', config: accounts.generatePasswordOverEmail},
+        {method: 'POST', path: '/accounts/email/{mode?}', config: accounts.generatePasswordOverEmail},
         {method: 'DELETE', path: '/accounts', config: accounts.delete},
         {method: 'PUT', path: '/accounts', config: accounts.update},
         {method: 'PUT', path: '/accounts/admin', config: accounts.updateAdmin},
