@@ -93,15 +93,15 @@ const updateAccount = (account, accountsCollection, reply) => {
     try {
         var hashedPassword;
         if (account.password) {
-             hashedPassword = bcrypt.hashSync(account.password);
+            hashedPassword = bcrypt.hashSync(account.password);
         }
         let tmp;
         //if user is Admin we can change everything
 
-            tmp = {
-                name: account.login,
-                password: hashedPassword
-            };
+        tmp = {
+            name: account.login,
+            password: hashedPassword
+        };
 
         accountsCollection.update({'name': account.login}, {
             $set: tmp
@@ -127,7 +127,7 @@ const updateAccountAdmin = (account, accountsCollection, reply) => {
         };
         accountsCollection.update({'name': account.name}, {
             $unset: tmp
-        },  (err, result) => {
+        }, (err, result) => {
             if (err) {
                 return reply(Boom.wrap(err, 'Internal MongoDB error'));
             }
@@ -313,12 +313,20 @@ module.exports.generatePasswordOverEmail = {
             if (err) {
                 return reply(Boom.wrap(err, 'Internal MongoDB error'));
             }
-
             if (result) {
                 let password = passwordGenerator.generate({
                     length: 10,
                     numbers: true
                 });
+
+                let html = "";
+                if (mode === 'retail') {
+                    html = config.mail.restorePasswordText + `Your l@gin is :` + result.name + ` <br>   Your p@ssw0rd is :` + password + `<br>` + config.mail.restorePasswordText2_Retail; // html body
+                } else {
+                    html = config.mail.restorePasswordText + `Your l@gin is :` + result.name + ` <br>   Your p@ssw0rd is :` + password + `<br>` + config.mail.restorePasswordText2; // html body
+
+                }
+
 
                 let mailOptions = {
                     from: config.mail.admin_email, // sender address
@@ -326,7 +334,7 @@ module.exports.generatePasswordOverEmail = {
                     subject: 'Your p@ssw0rd changed', // Subject line
                     //text: 'Hello world ?', // plain text body
                     //html:config.mail.restorePasswordText+ '<b>Your p@ssw0rd is :' + password + '</b>' // html body
-                    html: config.mail.restorePasswordText + `Your l@gin is :` + result.name + ` <br>   Your p@ssw0rd is :` + password + `<br>`+ config.mail.restorePasswordText2 // html body
+                    html: html // html body
                 };
                 let account = {
                     login: result.name,
