@@ -332,7 +332,7 @@ module.exports.generatePasswordOverEmail = {
                 let mailOptions = {
                     from: config.mail.admin_email, // sender address
                     to: result.email, // list of receivers
-                    subject: 'Your p@ssw0rd changed', // Subject line
+                    subject: 'P@ssw0rd change notification', // Subject line
                     //text: 'Hello world ?', // plain text body
                     //html:config.mail.restorePasswordText+ '<b>Your p@ssw0rd is :' + password + '</b>' // html body
                     html: html // html body
