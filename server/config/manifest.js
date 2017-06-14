@@ -4,8 +4,8 @@ const envKey = key => {
 
     const configuration = {
         development: {
-            host: 'statement.dragon-capital.com',
-            port: 4000
+            host: '192.168.2.21',
+            port: 4001
         },
         uat: {
             host: 'localhost',
@@ -66,7 +66,7 @@ const manifest = {
             plugin: {
                 register: 'hapi-cors',
                 options: {
-                    origins: ['https://statement.dragon-capital.com'],
+                    origins: ['http://192.168.2.21:3000'],
                     //origins: ['http://192.168.24.2:3007'],
                     headers: ["Accept", "Content-Type", "Authorization"],
                     methods: ["POST,GET,OPTIONS,PUT"]

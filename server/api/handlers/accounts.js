@@ -31,6 +31,7 @@ module.exports.login = {
 
                         let token = JWT.sign(tmp, config.security.JWT_SECRET, {expiresIn: config.security.TOKEN_EXP}); // synchronous
                         tmp.token = token;
+                        tmp.expires = Date.now() +config.security.TOKEN_EXP*1000;
                         let resultReply = {
                             account: tmp
                         }
