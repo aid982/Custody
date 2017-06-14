@@ -10,12 +10,8 @@ class StatementPage extends React.Component {
     /**
      * Class constructor.
      */
-    constructor(props) {
-        super(props);
-    }
 
-    componentDidMount() {
-    }
+
 
     render() {
         const {statement, dateChange1, dateChange2, handleGetReport, input, changeAccount, isFetching, error, accounts} = this.props

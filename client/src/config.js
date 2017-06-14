@@ -3,8 +3,8 @@
  */
 
 const config = {
-    //server:'http://statement.dragon-capital.com:4000'
-    server:''
+    server:'http://192.168.2.21:4001'
+    //server:''
     // ...
 };
 

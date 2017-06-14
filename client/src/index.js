@@ -5,7 +5,6 @@ import './index.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {
-    cyan500, cyan700,
     pinkA200,teal500,teal700,
     grey100, grey300, grey400, grey500,
     white, darkBlack, fullBlack,

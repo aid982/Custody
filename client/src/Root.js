@@ -9,9 +9,7 @@ import Login from './Containers/Login';
 import Report from './Containers/Report';
 import ChangePassword from './Containers/ChangePassword';
 import RestorePassword from './Containers/RestorePassword';
-
 import StatementPage from './Containers/StatementPage';
-import  ErrorPage from './Components/Error';
 
 
 const Root = ({store}) => (

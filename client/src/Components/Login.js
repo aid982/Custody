@@ -19,7 +19,7 @@ const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCall
 
             <div className="field-line">
                 <TextField
-                    floatingLabelText="Login"
+                    floatingLabelText="Login/email"
                     name="login"
                     errorText={errors.login}
                     onChange={onChange}
@@ -37,7 +37,7 @@ const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCall
                     value={user.password}
                 />
             </div>
-            {! captchaOK && <Recaptcha className ="capcha"
+            {! captchaOK && <Recaptcha className="capcha"
                 sitekey="6LckICAUAAAAAFGJClbghPFZ0CmP4ou9S8nI2tkC"
                 render="explicit"
                 verifyCallback={captchaVerifyCallback}
@@ -51,7 +51,7 @@ const Login = ({onChange,onSubmit, user,errors,captchaVerifyCallback,captchaCall
 
 
 
-            <CardText>Forget your password ?  <Link to={'/restore'}>Restore</Link>.</CardText>
+            <CardText> Forget your password ?  <Link to={'/restore'}>Restore</Link>.</CardText>
 
 
         </Card>

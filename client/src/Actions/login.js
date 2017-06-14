@@ -3,12 +3,13 @@
  */
 import config from '../config';
 const server = config.server;
-export const CHANGE_LOGIN_PSWRD = 'CHANGE_LOGIN_PSWRD'
-export const REQUEST_TOKEN = 'REQUEST_TOKEN'
-export const RECEIVE_TOKEN = 'RECIEVE_TOKEN'
-export const ACCOUNT_EXIT = 'ACCOUNT_EXIT'
-export const  RECEIVE_ERROR ='RECEIVE_ERROR_LOGIN'
-import {browserHistory} from 'react-router'
+export const CHANGE_LOGIN_PSWRD = 'CHANGE_LOGIN_PSWRD';
+export const REQUEST_TOKEN = 'REQUEST_TOKEN';
+export const RECEIVE_TOKEN = 'RECIEVE_TOKEN';
+export const ACCOUNT_EXIT = 'ACCOUNT_EXIT';
+export const  RECEIVE_ERROR ='RECEIVE_ERROR_LOGIN';
+import {browserHistory} from 'react-router';
+import {accountChange} from './index';
 
 
 export const receiveTOKEN = (json) => (
@@ -68,7 +69,8 @@ export const submit = () => (dispatch, getState) => {
     dispatch(requestTOKEN(user));    return fetch(server + `/api/login`, {
         headers: {
             'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+
         },
         method: 'POST',
         body: JSON.stringify(user)
@@ -77,6 +79,7 @@ export const submit = () => (dispatch, getState) => {
             if (response.ok) {
                 response.json().then(json => {
                     dispatch(receiveTOKEN(json));
+                    dispatch(accountChange(json.account.accounts[0]))
                     browserHistory.push('/')
 
                 })

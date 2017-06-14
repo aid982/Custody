@@ -5,7 +5,6 @@ import React, {PropTypes} from 'react';
 import AppBar from 'material-ui/AppBar';
 import AppBarLoginComponent from './AppBarLoginComponent';
 import Paper from 'material-ui/Paper';
-import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 const Base = ({children, qtyInCart, account, onAccountExit,onChangePassword}) => (
     <div>
 
@@ -13,7 +12,7 @@ const Base = ({children, qtyInCart, account, onAccountExit,onChangePassword}) =>
             iconElementRight={<AppBarLoginComponent account={account}  onAccountExit={onAccountExit} onChangePassword={onChangePassword}/>}
         />
         <Paper className="mainContainer" zDepth={5}>
-            <div className ="mainCardContainer">
+            <div className="mainCardContainer">
                 {children}
             </div>
 

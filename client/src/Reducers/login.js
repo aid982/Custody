@@ -25,9 +25,13 @@ const getAccountFromStorage = () => {
     let account = localStorage.getItem('account');
     try {
         account = JSON.parse(account);
+        if(account.expires<Date.now()) {
+            account = undefined;
+        }
     } catch (Err) {
         account = undefined
     }
+
 
     return account;
 }

@@ -10,15 +10,6 @@ export const RECIEVE_ERROR = 'RECIEVE_ERROR'
 import {browserHistory} from 'react-router'
 
 
-const receiveError = (msg) => (
-    {
-        type: RECIEVE_ERROR,
-        error: msg,
-
-    }
-
-)
-
 export const receivePasswordChange = (json) => (
     {
         type: RECIEVE_CHANGE_PSWD,

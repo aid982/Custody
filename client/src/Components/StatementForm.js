@@ -26,9 +26,9 @@ const StatementForm = ({dataFromApi, changeDate1, changeDate2, handleChangeAccou
 
     <div className="reportContainer">
         <div className="inputContainer">
-            account :<DropDownMenu value={input.account} onChange={handleChangeAccount} style={ styles.dropDownMenu} >
+            account :<DropDownMenu value={input.account}  onChange={handleChangeAccount} style={ styles.dropDownMenu} >
                 {accounts.map((item, index) => (
-                    <MenuItem key ={item} value={item} primaryText={item}/>))}
+                    <MenuItem key={item} value={item} primaryText={item}/>))}
 
 
             </DropDownMenu>

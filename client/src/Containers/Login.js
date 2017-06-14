@@ -1,7 +1,7 @@
 /**
  * Created by osetskiy on 4/12/2017.
  */
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {connect} from 'react-redux'
 import LoginForm from '../Components/Login';
 import {changeLoginPswrd,submit} from '../Actions/login'

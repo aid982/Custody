@@ -1,7 +1,7 @@
 /**
  * Created by osetskiy on 4/12/2017.
  */
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {connect} from 'react-redux'
 import BaseComponent from '../Components/Base';
 import {accountExit} from '../Actions/login'
@@ -27,7 +27,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         onAccountExit: () => {
             dispatch(accountExit())

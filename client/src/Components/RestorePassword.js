@@ -29,7 +29,7 @@ const RestorePassword = ({onChange,onSubmit,data,errors,snackBarOpen,onSnackBarC
                     value={data.email}
                 />
             </div>
-            {! captchaOK && <Recaptcha className ="capcha"
+            {! captchaOK && <Recaptcha className="capcha"
                                        sitekey="6LckICAUAAAAAFGJClbghPFZ0CmP4ou9S8nI2tkC"
                                        render="explicit"
                                        verifyCallback={captchaVerifyCallback}

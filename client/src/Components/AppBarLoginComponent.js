@@ -40,7 +40,7 @@ class LoginWithCartComponent extends React.Component {
         return (
             <div>
                 {this.props.account ?
-                   <Logged style={this.props.style} onChangePassword={this.props.onChangePassword} onAccountExit ={this.props.onAccountExit}/> : <a href="/login"><FlatButton
+                   <Logged style={this.props.style} onChangePassword={this.props.onChangePassword} onAccountExit={this.props.onAccountExit}/> : <a href="/login"><FlatButton
                         style={this.props.style} label="Login"/>
                     </a>
                 }
